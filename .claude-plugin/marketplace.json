@@ -1,0 +1,21 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "linkedin-roast-skill",
+  "description": "The LinkedIn roast skill for Claude Code",
+  "owner": {
+    "name": "Alex Chen"
+  },
+  "plugins": [
+    {
+      "name": "linkedin-roast-skill",
+      "description": "Five Claudes roast your LinkedIn profile, each one alone, then it fixes it: a new headline, an About with keywords, every job rewritten, a banner file and a headshot prompt.",
+      "source": "./",
+      "category": "productivity",
+      "author": {
+        "name": "Alex Chen",
+        "url": "https://chen.media"
+      },
+      "homepage": "https://chen.media/guides/get-5-claudes-to-roast-your-linkedin-profile-then-fix-it-set-up-the-free-linkedin-roast-skill"
+    }
+  ]
+}

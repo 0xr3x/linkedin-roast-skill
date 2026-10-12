@@ -2,17 +2,27 @@
 
 Five Claudes roast your LinkedIn profile, each one alone: a recruiter, a hiring manager, a founder, an expert in your field and a peer at your level. Then the skill fixes the profile: a new headline, an About section with the keywords people search for, every experience entry rewritten, a banner file and a headshot prompt.
 
-It is a free alternative to paying someone on Fiverr to review your profile. It is not made by Anthropic or LinkedIn.
+It is a free alternative to paying someone on Fiverr to review your profile. Free, MIT, no signup, no API key. It is not made by Anthropic or LinkedIn.
+
+Made by **Alex Chen** ([@nocodealex](https://instagram.com/nocodealex)), an AI creator who builds free Claude Code skills. Full guide: [chen.media](https://chen.media/guides/get-5-claudes-to-roast-your-linkedin-profile-then-fix-it-set-up-the-free-linkedin-roast-skill).
 
 ## Install
 
-Copy the folder into your skills folder:
+Paste this into Claude Code:
 
 ```
-cp -r skills/linkedin-roast ~/.claude/skills/
+https://github.com/alexyc9381/linkedin-roast-skill
+Install this skill, then confirm /linkedin-roast works.
 ```
 
-Or open Claude Code and paste this: "Create the file ~/.claude/skills/linkedin-roast/SKILL.md with exactly this content", followed by the whole of `skills/linkedin-roast/SKILL.md`.
+Or as a plugin:
+
+```
+/plugin marketplace add alexyc9381/linkedin-roast-skill
+/plugin install linkedin-roast-skill@linkedin-roast-skill
+```
+
+Or copy the folder into your skills folder yourself (`cp -r skills/linkedin-roast ~/.claude/skills/`). Open a new Claude Code session afterwards so it picks the skill up.
 
 ## Run it
 
@@ -64,3 +74,15 @@ It ends with a five-line checklist of what to paste into LinkedIn. See `examples
 - LinkedIn Recruiter Help, keyword search: https://www.linkedin.com/help/recruiter/answer/a415295
 
 <!-- Private build, not published. The whole SKILL.md is pasted into the chen.media guide, so the guide needs no repo. Goes public only when Alex says. -->
+
+## Making a video or post about this?
+
+Go ahead. Credit it like this, in your caption or description:
+
+```text
+/linkedin-roast skill by Alex Chen (@nocodealex): github.com/alexyc9381/linkedin-roast-skill
+```
+
+Tag [@nocodealex](https://instagram.com/nocodealex) so I can see it. Writing about it or citing it in a paper? Use **Cite this repository** in the sidebar on GitHub.
+
+Run the tests with `python3 -m unittest discover -s tests`.

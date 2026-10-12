@@ -1,0 +1,20 @@
+{
+  "name": "linkedin-roast-skill",
+  "description": "Five Claudes (a recruiter, a hiring manager, a founder, an expert in your field and a peer) roast your LinkedIn profile, each one alone, then it rewrites your headline, About and every job, and makes a banner file and a headshot prompt.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Alex Chen",
+    "url": "https://chen.media"
+  },
+  "homepage": "https://chen.media/guides/get-5-claudes-to-roast-your-linkedin-profile-then-fix-it-set-up-the-free-linkedin-roast-skill",
+  "repository": "https://github.com/alexyc9381/linkedin-roast-skill",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "claude-skills",
+    "linkedin",
+    "resume",
+    "job-search",
+    "career"
+  ]
+}

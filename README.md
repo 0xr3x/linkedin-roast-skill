@@ -73,7 +73,6 @@ It ends with a five-line checklist of what to paste into LinkedIn. See `examples
 - LinkedIn Talent Blog, About section limit: https://www.linkedin.com/business/talent/blog/product-tips/linkedin-profile-summaries-that-we-love-and-how-to-boost-your-own
 - LinkedIn Recruiter Help, keyword search: https://www.linkedin.com/help/recruiter/answer/a415295
 
-<!-- Private build, not published. The whole SKILL.md is pasted into the chen.media guide, so the guide needs no repo. Goes public only when Alex says. -->
 
 ## Making a video or post about this?
 

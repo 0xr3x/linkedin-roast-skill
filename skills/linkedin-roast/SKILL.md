@@ -1,6 +1,6 @@
 ---
 name: linkedin-roast
-description: Roast a LinkedIn profile with five separate Claudes (a recruiter, a hiring manager, a founder, an expert in the owner's field and a peer), then fix it: a new headline, an About section with search keywords, every experience entry rewritten, a banner file and a headshot prompt. Use when the user types /linkedin-roast followed by a profile (a PDF path, pasted text or a screenshot), or asks to "roast my LinkedIn", "review my LinkedIn profile" or "fix my LinkedIn".
+description: Roast a LinkedIn profile with five separate Claudes (a recruiter, a hiring manager, a founder, an expert in the owner's field and a peer), then fix it: a new headline, an About section with search keywords, every experience entry rewritten, a banner file and a headshot prompt. Use when the user types /linkedin-roast (alone, to read their own profile through the LinkedIn MCP, or followed by a PDF path, pasted text or a screenshot), or asks to "roast my LinkedIn", "review my LinkedIn profile" or "fix my LinkedIn".
 ---
 
 # /linkedin-roast
@@ -15,7 +15,10 @@ The user gives you a LinkedIn profile after `/linkedin-roast`. Five reviewers ro
 - Saving a profile as a PDF: desktop only. Me, View profile, then More or Resources, then Save to PDF. English profiles only.
 
 ## 1. Read the profile
-Everything after `/linkedin-roast` is the profile: a PDF path, a text file, a screenshot, or pasted text. If there is nothing, ask ONE question and stop: "Send me your profile as a PDF path, pasted text or a screenshot. On LinkedIn (desktop): Me, View profile, More, Save to PDF."
+The profile comes from one of these, in order:
+1. Anything after `/linkedin-roast`: a PDF path, a text file, a screenshot, or pasted text. Use it as given.
+2. Nothing after it, and the LinkedIn MCP is connected (tools named `mcp__mcp-server-linkedin__*`): call `get_my_profile` and use what it returns. Read-only: never call `send_message`, `connect_with_person` or any other tool that writes to LinkedIn. If sections are missing from the result (experience, About, skills), say which and carry on with what came back.
+3. Neither: ask ONE question and stop: "Send me your profile as a PDF path, pasted text or a screenshot, or connect the LinkedIn MCP."
 
 If a PDF cannot be read directly, try `pdftotext <file> -`. If that fails too, ask for pasted text or a screenshot.
 
@@ -23,7 +26,7 @@ Pull out: headline, About, every experience (title, employer, dates, bullets), e
 
 Work out three things and print them on one line starting with "Assumed:": the owner's field (for example "product marketing"), their level (early career, mid, senior or leader) and the kind of job they seem to want. If the user says what job they want or what field they are moving into, use their words instead of guessing. Do not stop to ask; the user can correct you after.
 
-Work only from what the user gave you. Do not open LinkedIn, log in, or search the web for this person.
+Work only from the profile you got in this step. Apart from the read-only `get_my_profile` call above, do not use LinkedIn, log in, or search the web for this person.
 
 ## 2. Five roasters, each alone
 Start FIVE sub-agents at once: one message with five Agent calls (older Claude Code versions call the tool Task). Wait for all five. Each prompt is its persona, the cleaned profile text, the rules and the format below, and nothing else. Never put one roaster's persona or answer into another's prompt, and never run a second round. That is what keeps them honest: five readers who cannot copy each other.
